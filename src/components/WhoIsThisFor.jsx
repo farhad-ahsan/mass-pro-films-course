@@ -39,7 +39,7 @@ export default function WhoIsThisFor() {
           WHO IS THIS FOR?
         </Typography>
       </Box>
-      <Grid container spacing={2}>
+      <Grid container spacing={1}>
         {WHO_IS_THIS_FOR.map((skill, index) => (
           <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: "flex" }}>
             <Card
@@ -48,10 +48,18 @@ export default function WhoIsThisFor() {
                 flexDirection: "column",
                 justifyContent: "space-between",
                 flexGrow: 1,
-                p: 1,
+                p: 0,
+                // p: 1,
               }}
             >
-              <CardContent>
+              <CardContent
+                sx={(theme) => ({
+                  [theme.breakpoints.down("md")]: {
+                    p: 2,
+                    pb: "10px !important",
+                  },
+                })}
+              >
                 <Typography variant="body2" color="text.secondary">
                   {skill}
                 </Typography>

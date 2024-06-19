@@ -29,45 +29,6 @@ const tiers = [
     buttonText: "Start now",
     buttonVariant: "contained",
   },
-  // {
-  //   title: 'Free',
-  //   price: '0',
-  //   description: [
-  //     '10 users included',
-  //     '2 GB of storage',
-  //     'Help center access',
-  //     'Email support',
-  //   ],
-  //   buttonText: 'Sign up for free',
-  //   buttonVariant: 'outlined',
-  // },
-  // {
-  //   title: 'Professional',
-  //   subheader: 'Recommended',
-  //   price: '15',
-  //   description: [
-  //     '20 users included',
-  //     '10 GB of storage',
-  //     'Help center access',
-  //     'Priority email support',
-  //     'Dedicated team',
-  //     'Best deals',
-  //   ],
-  //   buttonText: 'Start now',
-  //   buttonVariant: 'contained',
-  // },
-  // {
-  //   title: 'Enterprise',
-  //   price: '30',
-  //   description: [
-  //     '50 users included',
-  //     '30 GB of storage',
-  //     'Help center access',
-  //     'Phone & email support',
-  //   ],
-  //   buttonText: 'Contact us',
-  //   buttonVariant: 'outlined',
-  // },
 ];
 
 export default function Pricing() {
@@ -171,7 +132,7 @@ export default function Pricing() {
                     </Box>
                     <Box
                       sx={{
-                        display: "flex",
+                        // display: "flex",
                         alignItems: "baseline",
                         color: "grey.50",
                       }}

@@ -118,7 +118,7 @@ export default function Hero() {
               style={{
                 borderRadius: "10px",
               }}
-              src="https://www.youtube.com/embed/IGOTgqT7bBI?si=yG00r4cIUE0L6t5-"
+              src="https://www.youtube.com/embed/c6eyggw2rBs?si=tJoqKG-yA88X3Jkw"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer;  gyroscope; picture-in-picture; web-share"

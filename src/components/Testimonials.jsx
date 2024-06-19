@@ -2,11 +2,13 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
-// import Avatar from "@mui/material/Avatar";
+import SwipeableViews from "react-swipeable-views";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
+import { autoPlay } from "react-swipeable-views-utils";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 const userTestimonials = [
   {
@@ -53,7 +55,50 @@ const userTestimonials = [
   },
 ];
 
+const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+
+const Testimonials = () => {
+  return (
+    <>
+      {userTestimonials.map((testimonial, index) => (
+        <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: "flex" }}>
+          <Card
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              flexGrow: 1,
+              p: 1,
+            }}
+          >
+            <CardContent>
+              <Typography variant="body2" color="text.secondary">
+                {testimonial.testimonial}
+              </Typography>
+            </CardContent>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                pr: 2,
+              }}
+            >
+              <CardHeader
+                title={testimonial.name}
+                subheader={testimonial.occupation}
+              />
+            </Box>
+          </Card>
+        </Grid>
+      ))}
+    </>
+  );
+};
 export default function Reviews() {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <Container
       id="reviews"
@@ -83,39 +128,51 @@ export default function Reviews() {
         </Typography>
       </Box>
       <Grid container spacing={2}>
-        {userTestimonials.map((testimonial, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: "flex" }}>
-            <Card
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                flexGrow: 1,
-                p: 1,
-              }}
-            >
-              <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                  {testimonial.testimonial}
-                </Typography>
-              </CardContent>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                  pr: 2,
-                }}
+        {isSmallScreen ? (
+          <AutoPlaySwipeableViews>
+            {userTestimonials.map((testimonial, index) => (
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={4}
+                key={index}
+                sx={{ display: "flex" }}
               >
-                <CardHeader
-                  // avatar={testimonial.avatar}
-                  title={testimonial.name}
-                  subheader={testimonial.occupation}
-                />
-              </Box>
-            </Card>
-          </Grid>
-        ))}
+                <Card
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    flexGrow: 1,
+                    p: 1,
+                  }}
+                >
+                  <CardContent>
+                    <Typography variant="body2" color="text.secondary">
+                      {testimonial.testimonial}
+                    </Typography>
+                  </CardContent>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "row",
+                      justifyContent: "space-between",
+                      pr: 2,
+                    }}
+                  >
+                    <CardHeader
+                      title={testimonial.name}
+                      subheader={testimonial.occupation}
+                    />
+                  </Box>
+                </Card>
+              </Grid>
+            ))}
+          </AutoPlaySwipeableViews>
+        ) : (
+          <Testimonials />
+        )}
       </Grid>
     </Container>
   );
