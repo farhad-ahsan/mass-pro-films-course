@@ -36,8 +36,9 @@ const PaymentOptions = () => {
           Jazz Cash
         </AccordionSummary>
         <AccordionDetails sx={{ fontWeight: "bold" }}>
-          03044794791 <br />
-          Farhad Ahsan
+          Account Title: Farhad Ahsan
+          <br />
+          Account number: 03044794791
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -49,7 +50,7 @@ const PaymentOptions = () => {
           Meezan Bank
         </AccordionSummary>
         <AccordionDetails sx={{ fontWeight: "bold" }}>
-          Farhad Ahsan
+          Account Title: Farhad Ahsan
           <br />
           Account number: 02350103461829
           <br />
