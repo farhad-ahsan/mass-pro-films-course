@@ -11,6 +11,9 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
+import SignupStepsModal from "./SignupStepsModal";
+import { UserContext } from "../UserContext";
+import { useNavigate } from "react-router-dom";
 
 const tiers = [
   {
@@ -68,158 +71,178 @@ const tiers = [
 ];
 
 export default function Pricing() {
+  const user = React.useContext(UserContext);
+  const [modalOpen, setModalOpen] = React.useState(false);
+  const navigate = useNavigate();
+  const handleOpen = () => {
+    if (user) {
+      navigate("/course");
+    } else {
+      setModalOpen(true);
+    }
+  };
+
+  const handleClose = () => {
+    setModalOpen(false);
+  };
   return (
-    <Box>
-      <Container
-        id="pricing"
-        sx={{
-          pt: { xs: 4, sm: 12 },
-          pb: { xs: 8, sm: 16 },
-          position: "relative",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: { xs: 3, sm: 6 },
-        }}
-      >
-        <Box
+    <>
+      <SignupStepsModal open={modalOpen} handleClose={handleClose} />
+      <Box>
+        <Container
+          id="pricing"
           sx={{
-            width: { sm: "100%", md: "60%" },
-            textAlign: { sm: "left", md: "center" },
+            pt: { xs: 4, sm: 12 },
+            pb: { xs: 8, sm: 16 },
+            position: "relative",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: { xs: 3, sm: 6 },
           }}
         >
-          <Typography
-            mb="25px"
-            component="h2"
-            variant="h4"
-            color="text.primary"
+          <Box
+            sx={{
+              width: { sm: "100%", md: "60%" },
+              textAlign: { sm: "left", md: "center" },
+            }}
           >
-            Master the Art of Content Creation
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
-            Ready to start? <br /> Enroll today and take the first step towards
-            mastering the art of content creation!
-          </Typography>
-        </Box>
-        <Grid container spacing={3} alignItems="center" justifyContent="center">
-          {tiers.map((tier) => (
-            <Grid item key={tier.title} xs={12} sm={12} md={12}>
-              <Card
-                sx={{
-                  p: 2,
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 4,
-                  border: "1px solid",
-                  borderColor: "primary.main",
-                  background: "linear-gradient(#033363, #021F3B)",
-                }}
-              >
-                <CardContent>
-                  <Box
-                    sx={{
-                      mb: 1,
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      color: "grey.100",
-                    }}
-                  >
-                    <Typography component="h3" variant="h6">
-                      Content Creation Course
-                    </Typography>
-                    <Chip
-                      icon={<AutoAwesomeIcon />}
-                      label={tier.subheader}
-                      size="small"
-                      sx={{
-                        background: (theme) =>
-                          theme.palette.mode === "light" ? "" : "none",
-                        backgroundColor: "primary.contrastText",
-                        "& .MuiChip-label": {
-                          color: "primary.dark",
-                        },
-                        "& .MuiChip-icon": {
-                          color: "primary.dark",
-                        },
-                      }}
-                    />
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "baseline",
-                      color: "grey.50",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        textDecoration: "line-through",
-                        mr: 8,
-                      }}
-                      component="h3"
-                      variant="h2"
-                    >
-                      10000rs
-                    </Typography>
-                    <Typography component="h3" variant="h2">
-                      6000/rs
-                    </Typography>
-                    <Typography component="h3" variant="h6">
-                      &nbsp; LifeTime Access
-                    </Typography>
-                  </Box>
-                  <Divider
-                    sx={{
-                      my: 2,
-                      opacity: 0.2,
-                      borderColor: "grey.500",
-                    }}
-                  />
-                  {tier.description.map((line) => (
+            <Typography
+              mb="25px"
+              component="h2"
+              variant="h4"
+              color="text.primary"
+            >
+              Master the Art of Content Creation
+            </Typography>
+            <Typography variant="body1" color="text.secondary">
+              Ready to start? <br /> Enroll today and take the first step
+              towards mastering the art of content creation!
+            </Typography>
+          </Box>
+          <Grid
+            container
+            spacing={3}
+            alignItems="center"
+            justifyContent="center"
+          >
+            {tiers.map((tier) => (
+              <Grid item key={tier.title} xs={12} sm={12} md={12}>
+                <Card
+                  sx={{
+                    p: 2,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 4,
+                    border: "1px solid",
+                    borderColor: "primary.main",
+                    background: "linear-gradient(#033363, #021F3B)",
+                  }}
+                >
+                  <CardContent>
                     <Box
-                      key={line}
                       sx={{
-                        py: 1,
+                        mb: 1,
                         display: "flex",
-                        gap: 1.5,
+                        justifyContent: "space-between",
                         alignItems: "center",
+                        color: "grey.100",
                       }}
                     >
-                      <CheckCircleRoundedIcon
+                      <Typography component="h3" variant="h6">
+                        Content Creation Course
+                      </Typography>
+                      <Chip
+                        icon={<AutoAwesomeIcon />}
+                        label={tier.subheader}
+                        size="small"
                         sx={{
-                          width: 20,
-                          color: "primary.light",
+                          background: (theme) =>
+                            theme.palette.mode === "light" ? "" : "none",
+                          backgroundColor: "primary.contrastText",
+                          "& .MuiChip-label": {
+                            color: "primary.dark",
+                          },
+                          "& .MuiChip-icon": {
+                            color: "primary.dark",
+                          },
                         }}
                       />
+                    </Box>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "baseline",
+                        color: "grey.50",
+                      }}
+                    >
                       <Typography
-                        component="text"
-                        variant="subtitle2"
                         sx={{
-                          color: "grey.200",
+                          textDecoration: "line-through",
+                          mr: 8,
                         }}
+                        component="h3"
+                        variant="h2"
                       >
-                        {line}
+                        10000rs
+                      </Typography>
+                      <Typography component="h3" variant="h2">
+                        6000/rs
+                      </Typography>
+                      <Typography component="h3" variant="h6">
+                        &nbsp; LifeTime Access
                       </Typography>
                     </Box>
-                  ))}
-                </CardContent>
-                <CardActions>
-                  <Button
-                    fullWidth
-                    variant={tier.buttonVariant}
-                    component="a"
-                    href="/material-ui/getting-started/templates/checkout/"
-                    target="_blank"
-                  >
-                    {tier.buttonText}
-                  </Button>
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-    </Box>
+                    <Divider
+                      sx={{
+                        my: 2,
+                        opacity: 0.2,
+                        borderColor: "grey.500",
+                      }}
+                    />
+                    {tier.description.map((line) => (
+                      <Box
+                        key={line}
+                        sx={{
+                          py: 1,
+                          display: "flex",
+                          gap: 1.5,
+                          alignItems: "center",
+                        }}
+                      >
+                        <CheckCircleRoundedIcon
+                          sx={{
+                            width: 20,
+                            color: "primary.light",
+                          }}
+                        />
+                        <Typography
+                          component="text"
+                          variant="subtitle2"
+                          sx={{
+                            color: "grey.200",
+                          }}
+                        >
+                          {line}
+                        </Typography>
+                      </Box>
+                    ))}
+                  </CardContent>
+                  <CardActions>
+                    <Button
+                      fullWidth
+                      variant={tier.buttonVariant}
+                      onClick={handleOpen}
+                    >
+                      {tier.buttonText}
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
+    </>
   );
 }
