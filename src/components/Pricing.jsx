@@ -11,7 +11,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
-import SignupStepsModal from "./SignupStepsModal";
+// import SignupStepsModal from "./SignupStepsModal";
 import { UserContext } from "../UserContext";
 import { useNavigate } from "react-router-dom";
 
@@ -33,22 +33,23 @@ const tiers = [
 
 export default function Pricing() {
   const user = React.useContext(UserContext);
-  const [modalOpen, setModalOpen] = React.useState(false);
+  // const [modalOpen, setModalOpen] = React.useState(false);
   const navigate = useNavigate();
   const handleOpen = () => {
     if (user) {
       navigate("/course");
     } else {
-      setModalOpen(true);
+      navigate("/signup-steps");
+      // setModalOpen(true);
     }
   };
 
-  const handleClose = () => {
-    setModalOpen(false);
-  };
+  // const handleClose = () => {
+  //   setModalOpen(false);
+  // };
   return (
     <>
-      <SignupStepsModal open={modalOpen} handleClose={handleClose} />
+      {/* <SignupStepsModal open={modalOpen} handleClose={handleClose} /> */}
       <Box>
         <Container
           id="pricing"

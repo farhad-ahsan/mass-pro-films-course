@@ -16,7 +16,8 @@ import { UserContext } from "../UserContext";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 import LOGO from "../assets/logo0.png";
-import SignupStepsModal from "./SignupStepsModal";
+// import {SignupStepsPage} from "./SignupStepsModal";
+// import SignupStepsModal from "./SignupStepsModal";
 
 const logoStyle = {
   width: "140px",
@@ -29,7 +30,7 @@ function AppAppBar() {
   const user = React.useContext(UserContext);
   const navigate = useNavigate();
 
-  const [modalOpen, setModalOpen] = useState(false);
+  // const [modalOpen, setModalOpen] = useState(false);
   const isRoot = window.location.pathname === "/";
 
   const toggleDrawer = (newOpen) => () => {
@@ -39,13 +40,14 @@ function AppAppBar() {
     if (user) {
       navigate("/course");
     } else {
-      setModalOpen(true);
+      navigate("/signup-steps");
+      // setModalOpen(true);
     }
   };
 
-  const handleClose = () => {
-    setModalOpen(false);
-  };
+  // const handleClose = () => {
+  //   setModalOpen(false);
+  // };
   const handleSignOut = async () => {
     try {
       await signOut(auth);
@@ -71,7 +73,7 @@ function AppAppBar() {
 
   return (
     <>
-      <SignupStepsModal open={modalOpen} handleClose={handleClose} />
+      {/* <SignupStepsModal open={modalOpen} handleClose={handleClose} /> */}
       <div>
         <AppBar
           position="fixed"

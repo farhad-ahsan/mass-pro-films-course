@@ -17,6 +17,7 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import { ExpandMore } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 const steps = [
   "Step 1: Send a Payment of 6000rs to one of the listed payment options below",
   "Step 2: Enter your name",
@@ -60,6 +61,52 @@ const PaymentOptions = () => {
     </>
   );
 };
+export const SignupStepsPage = () => {
+  const navigate = useNavigate();
+  return (
+    // <Modal open={open} onClose={handleClose}>
+    <Container component="main" maxWidth="lg">
+      <Box
+        sx={{
+          marginTop: 8,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          bgcolor: "background.paper",
+          boxShadow: 24,
+          p: 4,
+          borderRadius: 1,
+          maxHeight: "85vh",
+          overflow: "auto",
+        }}
+      >
+        <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+          <LockOutlined />
+        </Avatar>
+        <Typography component="h1" variant="h5">
+          To access the Course you need to complete these steps
+        </Typography>
+        <List>
+          {steps.map((step, index) => (
+            <>
+              <ListItem key={index}>
+                <ListItemText primary={step} />
+              </ListItem>
+              {index === 0 && <PaymentOptions />}
+            </>
+          ))}
+        </List>
+        <WhatsAppForm
+          handleClose={() => {
+            navigate("/");
+          }}
+        />
+      </Box>
+    </Container>
+    // </Modal>
+  );
+};
+
 const SignupStepsModal = ({ open, handleClose }) => {
   return (
     <Modal open={open} onClose={handleClose}>

@@ -5,28 +5,29 @@ import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import SignupStepsModal from "./SignupStepsModal";
+// import SignupStepsModal from "./SignupStepsModal";
 import { UserContext } from "../UserContext";
 import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
-  const [modalOpen, setModalOpen] = useState(false);
+  // const [modalOpen, setModalOpen] = useState(false);
   const navigate = useNavigate();
   const user = useContext(UserContext);
   const handleOpen = () => {
     if (user) {
       navigate("/course");
     } else {
-      setModalOpen(true);
+      navigate("/signup-steps");
+      // setModalOpen(true);
     }
   };
 
-  const handleClose = () => {
-    setModalOpen(false);
-  };
+  // const handleClose = () => {
+  //   setModalOpen(false);
+  // };
   return (
     <>
-      <SignupStepsModal open={modalOpen} handleClose={handleClose} />
+      {/* <SignupStepsModal open={modalOpen} handleClose={handleClose} /> */}
       <Box
         id="hero"
         sx={(theme) => ({

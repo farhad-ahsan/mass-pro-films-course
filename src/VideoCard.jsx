@@ -8,6 +8,7 @@ import VideoPlayer from "./VIdeoPlayer";
 
 export default function VideoCard({ data }) {
   const [openModal, setOpenModal] = useState(false);
+  if (!data.snippet.thumbnails.standard) console.log(" data", data);
   return (
     <>
       {openModal && (
@@ -19,10 +20,12 @@ export default function VideoCard({ data }) {
           setOpenModal(true);
         }}
       >
-        <CardMedia
-          sx={{ height: 140 }}
-          image={data.snippet.thumbnails.standard.url}
-        />
+        {data.snippet.thumbnails.standard && (
+          <CardMedia
+            sx={{ height: 140 }}
+            image={data.snippet.thumbnails.standard.url}
+          />
+        )}
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {data.snippet.title}

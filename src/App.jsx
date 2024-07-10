@@ -8,6 +8,7 @@ import { UserProvider } from "./UserContext";
 import Login from "./Login";
 import "./index.css";
 import ProtectedRoute from "./ProtectedRoute";
+import { SignupStepsPage } from "./components/SignupStepsModal";
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -18,6 +19,10 @@ const Router = () => {
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/signup-steps",
+      element: <SignupStepsPage />,
     },
     {
       path: "/course",
