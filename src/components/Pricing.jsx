@@ -19,7 +19,7 @@ const tiers = [
   {
     title: "Content Creation Course",
     subheader: "Early bird discount",
-    price: "6000/rs",
+    price: "5999/rs",
     description: [
       "9 Hours of watch Time",
       "50+ Lessons",
@@ -149,7 +149,7 @@ export default function Pricing() {
                         10000rs
                       </Typography>
                       <Typography component="h3" variant="h2">
-                        6000/rs
+                        5999/rs
                       </Typography>
                       <Typography component="h3" variant="h6">
                         &nbsp; LifeTime Access
