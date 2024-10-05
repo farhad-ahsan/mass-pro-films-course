@@ -19,7 +19,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import { ExpandMore } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 const steps = [
-  "Step 1: Send a Payment of 6000rs to one of the listed payment options below",
+  "Step 1: Send a Payment of 5999rs to one of the listed payment options below",
   "Step 2: Enter your name",
   "Step 3: Enter your email address",
   "Step 4: Submit this information via WhatsApp and send us the payment proof. You will have access to your account shortly.",

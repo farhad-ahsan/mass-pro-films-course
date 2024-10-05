@@ -12,46 +12,46 @@ import { useMediaQuery, useTheme } from "@mui/material";
 
 const userTestimonials = [
   {
-    name: "Zaraan Farooq",
+    name: "Sikandar Usman",
     occupation: "Life-Changing Experience!",
     rating: "5/5",
     testimonial:
-      "I enrolled in the content creation coaching program, and it exceeded my expectations. The step-by-step guidance helped me create engaging content for my business. Highly recommended!",
+      "I was doing a small job before this course When i started this course it was a very life changing experience after completing it i resign from my job & started hunting projects & right now after 3 months iam doing very well for me. Highly recommended!",
   },
   {
-    name: "Zuhaib Khan",
+    name: "Arooj Asim",
     occupation: "Practical and Actionable",
     rating: "4.5/5",
     testimonial:
-      "This filmmaking course was easy to follow, especially the editing software modules. I learned valuable skills and even got tips on using social media effectively.",
+      "My 13 year child has done this course & now he is making gaming & Vlogging content on youtube. I am very happy that my son is doing something productive Thank you Mass Pro Films.",
   },
   {
-    name: "Maria Imran",
-    occupation: "Content Creation U Rocks!",
+    name: "Sarmad Salahudin",
+    occupation: "Best online Course yet!",
     rating: "5/5",
     testimonial:
-      "Mass Pro Films is a game-changer. His system is practical, and I’m now confidently creating content for multiple businesses.",
+      "Mass Pro Films is a game-changer. I am a teacher used to record my lectures i was facing many technical issues but after buying this course everything seems right now it is Pakistan Biggest Course.",
   },
   {
-    name: "Rana Hammad",
-    occupation: "Clarity and Confidence",
-    rating: "4/5",
+    name: "Maria Yasir",
+    occupation: "Best Earning source",
+    rating: "5/5",
     testimonial:
-      "The Ultimate Guide to Content Creation for Coaches helped me shift my mindset. Now, I create content with clarity and confidence.",
+      "I am a House Wife & i was trying to support my husband financially for a long time Content Creation Program helps me to earn from home now i am selling my Graphic Designing & Video Editing Services on Upwork.",
   },
   {
-    name: "Hamza Malik",
+    name: "Umar Chohan",
     occupation: "Highly Informative",
     rating: "4.5/5",
     testimonial:
-      "This course on content creation strategies for coaches and trainers provided valuable insights. The instructor’s rating speaks for itself!",
+      "Just Completed This Giagantic Course now i want to become a product photographer",
   },
   {
-    name: "Hassan Fadul",
-    occupation: "Expertise Unleashed!",
+    name: "Zakriya Arif",
+    occupation: "It Was Fun!",
     rating: "5/5",
     testimonial:
-      "I joined this content creation coaching program, and it transformed my approach. The three content pillars—connect, entertain, and learn—are now my secret weapons.",
+      "I joined this content creation coaching program, and it transformed my approach. Full High Quality & he way they have teached Post Production is very Fun & informative.",
   },
 ];
 
