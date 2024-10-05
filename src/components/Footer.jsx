@@ -10,6 +10,8 @@ import Typography from "@mui/material/Typography";
 
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import { Call } from "@mui/icons-material";
+import { Tooltip } from "@mui/material";
 
 const logoStyle = {
   width: "140px",
@@ -24,7 +26,7 @@ export default function Footer() {
         flexDirection: "column",
         alignItems: "center",
         gap: { xs: 4, sm: 8 },
-        py: { xs: 8, sm: 10 },
+        py: { xs: 2, sm: 4 },
         textAlign: { sm: "center", md: "left" },
       }}
     >
@@ -186,6 +188,16 @@ export default function Footer() {
             color: "text.secondary",
           }}
         >
+          <Tooltip title="Call Now">
+            <IconButton
+              color="inherit"
+              href="tel:+923044794791"
+              aria-label="GitHub"
+              sx={{ alignSelf: "center" }}
+            >
+              <Call />
+            </IconButton>
+          </Tooltip>
           <IconButton
             color="inherit"
             href="https://www.facebook.com/massprofilms"

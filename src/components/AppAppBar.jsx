@@ -168,9 +168,10 @@ function AppAppBar() {
               >
                 {!user && (
                   <Button
-                    color="primary"
-                    variant="text"
-                    size="small"
+                    color="error"
+                    variant="outlined"
+                    size="large"
+                    sx={{ fontWeight: "bold" }}
                     component={Link}
                     to="/login"
                   >
@@ -199,7 +200,12 @@ function AppAppBar() {
                   </>
                 ) : (
                   <Button
-                    color="primary"
+                    sx={{
+                      bgcolor: "red",
+                      "&:hover": {
+                        bgcolor: "darkred",
+                      },
+                    }}
                     variant="contained"
                     size="small"
                     onClick={handleOpen}
@@ -247,11 +253,12 @@ function AppAppBar() {
                     {!user && (
                       <MenuItem>
                         <Button
-                          color="primary"
+                          color="error"
                           variant="outlined"
+                          size="large"
+                          sx={{ fontWeight: "bold", width: "100%" }}
                           component={Link}
                           to="/login"
-                          sx={{ width: "100%" }}
                         >
                           Sign in
                         </Button>
@@ -284,9 +291,14 @@ function AppAppBar() {
                     ) : (
                       <MenuItem>
                         <Button
-                          color="primary"
+                          sx={{
+                            bgcolor: "red",
+                            width: "100%",
+                            "&:hover": {
+                              bgcolor: "darkred",
+                            },
+                          }}
                           variant="contained"
-                          sx={{ width: "100%" }}
                           onClick={handleOpen}
                         >
                           Start Now

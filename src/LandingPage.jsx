@@ -11,7 +11,7 @@ import Learn from "./components/Learn";
 import WhoIsThisFor from "./components/WhoIsThisFor";
 import Reviews from "./components/Testimonials";
 import Footer from "./components/Footer";
-
+import WhatsappActionButton from "./components/WhatsappActionButton";
 export default function LandingPage() {
   return (
     <>
@@ -20,7 +20,7 @@ export default function LandingPage() {
       <Hero />
       <Box sx={{ bgcolor: "background.default" }}>
         <Divider />
-        <Learn  />
+        <Learn />
         <Pricing />
         <Divider />
         <Divider />
@@ -31,6 +31,7 @@ export default function LandingPage() {
         <Reviews />
         <Divider />
         <Footer />
+        <WhatsappActionButton />
       </Box>
     </>
   );

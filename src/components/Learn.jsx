@@ -40,8 +40,7 @@ export default function Learn() {
       <Container
         id="skills"
         sx={{
-          pt: { xs: 4, sm: 12 },
-          pb: { xs: 8, sm: 16 },
+          py: { xs: 2, sm: 4 },
           position: "relative",
           display: "flex",
           flexDirection: "column",
@@ -52,7 +51,7 @@ export default function Learn() {
         <Box
           sx={{
             width: { sm: "100%", md: "60%" },
-            textAlign: { sm: "left", md: "center" },
+            textAlign: "center",
           }}
         >
           <Typography component="h2" variant="h4" color="white">
@@ -71,8 +70,9 @@ export default function Learn() {
                 variant="outlined"
                 label={skill}
                 sx={{
-                  backgroundColor: "grey.900",
-                  color: "white",
+                  fontWeight: "bold",
+                  backgroundColor: "white",
+                  color: "black",
                   borderColor: "grey.800",
                 }}
               />

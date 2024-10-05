@@ -103,8 +103,7 @@ export default function Reviews() {
     <Container
       id="reviews"
       sx={{
-        pt: { xs: 4, sm: 12 },
-        pb: { xs: 8, sm: 16 },
+        py: { xs: 2, sm: 4 },
         position: "relative",
         display: "flex",
         flexDirection: "column",

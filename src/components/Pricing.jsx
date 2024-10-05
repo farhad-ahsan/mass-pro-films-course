@@ -21,7 +21,7 @@ const tiers = [
     subheader: "Early bird discount",
     price: "5999/rs",
     description: [
-      "9 Hours of watch Time",
+      "60 Days of watch Time",
       "50+ Lessons",
       "15 Chapters",
       "Private Community for Creators",
@@ -54,8 +54,7 @@ export default function Pricing() {
         <Container
           id="pricing"
           sx={{
-            pt: { xs: 4, sm: 12 },
-            pb: { xs: 8, sm: 16 },
+            py: { xs: 2, sm: 4 },
             position: "relative",
             display: "flex",
             flexDirection: "column",
@@ -66,7 +65,7 @@ export default function Pricing() {
           <Box
             sx={{
               width: { sm: "100%", md: "60%" },
-              textAlign: { sm: "left", md: "center" },
+              textAlign: "center",
             }}
           >
             <Typography
@@ -98,7 +97,8 @@ export default function Pricing() {
                     gap: 4,
                     border: "1px solid",
                     borderColor: "primary.main",
-                    background: "linear-gradient(#033363, #021F3B)",
+                    borderRadius: "48px",
+                    background: "linear-gradient(#2583e2, #062a4c)",
                   }}
                 >
                   <CardContent>
@@ -138,17 +138,26 @@ export default function Pricing() {
                         color: "grey.50",
                       }}
                     >
+                      <Typography component={"h3"} variant="body1">
+                        Original Price
+                      </Typography>
                       <Typography
-                        sx={{
+                        style={{
                           textDecoration: "line-through",
-                          mr: 8,
                         }}
-                        component="h3"
-                        variant="h2"
+                        variant="h4"
                       >
                         10000rs
                       </Typography>
-                      <Typography component="h3" variant="h2">
+                      <Typography component={"h3"} variant="body1">
+                        Discounted Price
+                      </Typography>
+                      <Typography
+                        component="h3"
+                        variant="h2"
+                        fontWeight={600}
+                        color={"red"}
+                      >
                         5999/rs
                       </Typography>
                       <Typography component="h3" variant="h6">
@@ -175,7 +184,7 @@ export default function Pricing() {
                         <CheckCircleRoundedIcon
                           sx={{
                             width: 20,
-                            color: "primary.light",
+                            color: "red",
                           }}
                         />
                         <Typography
@@ -194,6 +203,16 @@ export default function Pricing() {
                     <Button
                       fullWidth
                       variant={tier.buttonVariant}
+                      // color="red"
+                      sx={{
+                        color: "white",
+                        bgcolor: "red",
+                        "&:hover": {
+                          bgcolor: "darkred",
+                        },
+                        fontSize: "24px",
+                        fontWeight: "bold",
+                      }}
                       onClick={handleOpen}
                     >
                       {tier.buttonText}

@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { alpha } from "@mui/material";
+import { useContext } from "react";
+import { alpha, Grid, IconButton } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
@@ -8,6 +8,8 @@ import Typography from "@mui/material/Typography";
 // import SignupStepsModal from "./SignupStepsModal";
 import { UserContext } from "../UserContext";
 import { useNavigate } from "react-router-dom";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import { Facebook, YouTube } from "@mui/icons-material";
 
 export default function Hero() {
   // const [modalOpen, setModalOpen] = useState(false);
@@ -45,12 +47,12 @@ export default function Hero() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            pt: { xs: 14, sm: 20 },
-            pb: { xs: 8, sm: 12 },
+            pt: { xs: 8, sm: 12 },
+            pb: { xs: 1, sm: 2 },
           }}
         >
           <Stack
-            spacing={2}
+            spacing={1}
             useFlexGap
             sx={{ width: { xs: "100%", sm: "70%" } }}
           >
@@ -62,6 +64,7 @@ export default function Hero() {
                 alignSelf: "center",
                 textAlign: "center",
                 fontSize: "clamp(3.5rem, 10vw, 4rem)",
+                fontWeight: "bold",
               }}
             >
               Turn Content Creation into Full Time Career
@@ -80,12 +83,19 @@ export default function Hero() {
               alignSelf="center"
               spacing={1}
               useFlexGap
-              sx={{ pt: 2, width: { xs: "100%", sm: "auto" } }}
+              sx={{ pt: 1, width: { xs: "100%", sm: "auto" } }}
             >
               <Button
                 size="large"
-                variant="outlined"
-                color="primary"
+                variant="contained"
+                sx={{
+                  bgcolor: "red",
+                  fontWeight: "bold",
+                  fontSize: "24px",
+                  "&:hover": {
+                    bgcolor: "darkred",
+                  },
+                }}
                 onClick={handleOpen}
               >
                 START NOW
@@ -95,7 +105,7 @@ export default function Hero() {
           <Box
             id="image"
             sx={(theme) => ({
-              mt: { xs: 8, sm: 10 },
+              mt: { xs: 2, sm: 2 },
               alignSelf: "center",
               height: { xs: 200, sm: 700 },
               width: "100%",
@@ -126,6 +136,94 @@ export default function Hero() {
               referrerPolicy="strict-origin-when-cross-origin"
             />
           </Box>
+          <Grid container justifyContent={"space-between"}>
+            <Grid container item xs>
+              <IconButton
+                color="inherit"
+                href="https://www.instagram.com/Massprofilms"
+                aria-label="X"
+                style={{
+                  alignSelf: "flex-start",
+                  padding: "4px",
+                  marginRight: "8px",
+                  marginTop: "16px",
+                  background:
+                    "linear-gradient(to bottom, #405DE6, #833AB4, #C13584, #F77737, #FCAE45)",
+                }}
+              >
+                <InstagramIcon sx={{ fontSize: "100px", color: "white" }} />
+              </IconButton>
+              <Typography
+                // textAlign="center"
+                color="text.secondary"
+                sx={{ alignSelf: "center", justifyContent: "center" }}
+              >
+                Check out our work on Instagram <br />{" "}
+                <IconButton
+                  color="inherit"
+                  href="https://www.instagram.com/Massprofilms"
+                  aria-label="X"
+                  sx={{ alignSelf: "flex-start", color: "#C13584" }}
+                >
+                  <b>@MassProFilms</b>
+                </IconButton>
+              </Typography>
+            </Grid>
+            <Grid container item xs>
+              <IconButton
+                color="inherit"
+                href="https://www.facebook.com/massprofilms"
+                aria-label="X"
+                sx={{ alignSelf: "center", justifyContent: "center" }}
+              >
+                <Facebook sx={{ fontSize: "100px", color: "#0679E9" }} />
+              </IconButton>
+              <Typography
+                // textAlign="center"
+                color="text.secondary"
+                sx={{ alignSelf: "center" }}
+              >
+                Check out our work on Facebook <br />{" "}
+                <IconButton
+                  color="inherit"
+                  href="https://www.facebook.com/massprofilms"
+                  aria-label="X"
+                  sx={{
+                    alignSelf: "center",
+                    justifyContent: "center",
+                    color: "#0679E9",
+                  }}
+                >
+                  <b>MassProFilmsFB</b>
+                </IconButton>
+              </Typography>
+            </Grid>
+            <Grid container item xs>
+              <IconButton
+                color="inherit"
+                href="https://www.youtube.com/@massprofilms935"
+                aria-label="X"
+                sx={{ alignSelf: "flex-start" }}
+              >
+                <YouTube sx={{ fontSize: "100px", color: "#FF0000" }} />
+              </IconButton>
+              <Typography
+                // textAlign="center"
+                color="text.secondary"
+                sx={{ alignSelf: "center" }}
+              >
+                Check out our work on Youtube <br />{" "}
+                <IconButton
+                  color="inherit"
+                  href="https://www.youtube.com/@massprofilms935"
+                  aria-label="X"
+                  sx={{ alignSelf: "flex-start", color: "#FF0000" }}
+                >
+                  <b>MassProFilmsYT</b>
+                </IconButton>
+              </Typography>
+            </Grid>
+          </Grid>
         </Container>
       </Box>
     </>
