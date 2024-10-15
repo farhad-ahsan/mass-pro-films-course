@@ -210,7 +210,7 @@ function AppAppBar() {
                     size="small"
                     onClick={handleOpen}
                   >
-                    Start Now
+                    BUY NOW
                   </Button>
                 )}
               </Box>
