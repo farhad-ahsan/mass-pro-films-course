@@ -26,7 +26,7 @@ const tiers = [
       "15 Chapters",
       "Private Community for Creators",
     ],
-    buttonText: "Start now",
+    buttonText: "Buy Now",
     buttonVariant: "contained",
   },
 ];
