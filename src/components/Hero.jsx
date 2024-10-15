@@ -98,7 +98,7 @@ export default function Hero() {
                 }}
                 onClick={handleOpen}
               >
-                START NOW
+                BUY NOW
               </Button>
             </Stack>
           </Stack>
