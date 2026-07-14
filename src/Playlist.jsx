@@ -12,8 +12,6 @@ import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 
-const API_KEY = "AIzaSyAj4kRikNDlq-82mdQhywgZDPQpqA0tbSo";
-
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
@@ -60,18 +58,10 @@ export default function Playlist({ playlistId, title, expanded, setExpanded }) {
   React.useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const response = await axios.get(
-          "https://www.googleapis.com/youtube/v3/playlistItems",
-          {
-            params: {
-              part: "snippet",
-              playlistId: playlistId,
-              maxResults: 50,
-              key: API_KEY,
-            },
-          }
-        );
-        setVideoData(response.data.items);
+        const response = await axios.get("/api/playlist", {
+          params: { playlistId },
+        });
+        setVideoData(response.data?.items ?? []);
       } catch (error) {
         console.error("Error fetching videos", error);
       }

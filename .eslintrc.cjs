@@ -11,6 +11,13 @@ module.exports = {
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
   plugins: ['react-refresh'],
+  overrides: [
+    {
+      // Serverless functions run on Node, not in the browser.
+      files: ['api/**/*.js'],
+      env: { node: true, browser: false },
+    },
+  ],
   rules: {
     'react/jsx-no-target-blank': 'off',
     'react-refresh/only-export-components': [

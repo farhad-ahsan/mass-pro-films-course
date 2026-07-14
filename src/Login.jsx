@@ -1,7 +1,7 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import { Checkbox, TextField, FormControlLabel } from "@mui/material";
+import { TextField } from "@mui/material";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
